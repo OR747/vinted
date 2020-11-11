@@ -5,12 +5,39 @@
   font-size: 18px;
   background-color: #ffffff;
   padding-left: 90px;
-
+  justify-content: space-around;
   display: flex;
 }
 .header img {
   height: 45px;
   width: 150px;
 
-  /*border: red solid 2px;*/
+  border: red solid 2px;
+}
+.input {
+  border: solid red 2px;
+}
+.button {
+  border: red solid 2px;
+  display: flex;
+  justify-content: space-between;
+}
+.contenaire1 {
+  border: black solid 2px;
+  height: 480px;
+  width: 1440px;
+}
+.bloc2 {
+  height: 258px;
+  width: 400px;
+  border: springgreen solid 2px;
+}
+.bloc3 {
+  height: 160px;
+  width: 100%;
+  border: tomato solid 2px;
+}
+img {
+  height: 700px;
+  width: 1440px;
 }

@@ -8,17 +8,20 @@ const Header = ({ recherche, setRecherche }) => {
         <input
           type="text"
           value={recherche}
+          placeholder="Recherche des articles"
           onChange={(event) => {
             setRecherche(event.target.value);
           }}
         />
       </div>
-      <div className="button1">
-        <button>S'inscrire</button>
-        <button>Se connecter</button>
-      </div>
-      <div className="button2">
-        <button>Vends tes articles</button>
+      <div className="button">
+        <div className="button1">
+          <button>S'inscrire</button>
+          <button>Se connecter</button>
+        </div>
+        <div className="button2">
+          <button>Vends tes articles</button>
+        </div>
       </div>
     </div>
   );
