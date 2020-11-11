@@ -1,15 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Offer from "./containers/Offer";
 import Home from "./containers/Home";
+import Header from "./components/Header";
 function App() {
+  const [recherche, setRecherche] = useState();
   return (
     <Router>
+      <Header />
       <Switch>
         <Route path="/offer">
           <Offer />
         </Route>
+
         <Route path="/">
           <Home />
         </Route>
