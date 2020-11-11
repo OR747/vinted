@@ -1,3 +1,4 @@
+import React from "react";
 import "./App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Offer from "./containers/Offer";
@@ -8,10 +9,9 @@ function App() {
       <Switch>
         <Route path="/offer">
           <Offer />
-          <Route />
-          <Route path="">
-            <Home />
-          </Route>
+        </Route>
+        <Route path="/">
+          <Home />
         </Route>
       </Switch>
     </Router>
