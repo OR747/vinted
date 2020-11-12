@@ -5,6 +5,8 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Offer from "./containers/Offer";
 import Home from "./containers/Home";
 import Header from "./components/Header";
+import Signup from "./containers/Signup";
+import Login from "./containers/Login";
 function App() {
   return (
     <Router>
@@ -13,7 +15,12 @@ function App() {
         <Route path="/offer/:id">
           <Offer />
         </Route>
-
+        <Route path="/signup">
+          <Signup />
+        </Route>
+        <Route path="/login">
+          <Login />
+        </Route>
         <Route path="/">
           <Home />
         </Route>

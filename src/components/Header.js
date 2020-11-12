@@ -1,5 +1,7 @@
 import React from "react";
 import logo from "../images/Vinted_logo.png";
+import { Link } from "react-router-dom";
+
 const Header = ({ recherche, setRecherche }) => {
   return (
     <div className="header">
@@ -16,8 +18,12 @@ const Header = ({ recherche, setRecherche }) => {
       </div>
       <div className="button">
         <div className="button1">
-          <button>S'inscrire</button>
-          <button>Se connecter</button>
+          <Link to="/signup">
+            <button>S'inscrire</button>
+          </Link>
+          <Link to="/login">
+            <button>Se connecter</button>
+          </Link>
         </div>
         <div className="button2">
           <button>Vends tes articles</button>
