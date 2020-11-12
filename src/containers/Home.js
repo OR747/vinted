@@ -14,6 +14,7 @@ const Home = () => {
       const response = await axios.get(
         " https://lereacteur-vinted-api.herokuapp.com/offers"
       );
+      console.log(response.data);
       setData(response.data);
       setIsLoading(false);
     } catch (error) {
@@ -43,7 +44,7 @@ const Home = () => {
         </div>
       </div>
 
-      <Link to="/offer">
+      <Link to={`/offer/${data._id}`}>
         <Offers data={data} />
       </Link>
     </div>
