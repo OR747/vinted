@@ -8,7 +8,7 @@ const Categories = ({ data }) => {
     <Link to={`/offer/${data._id}`}>
       <div className="categories">
         <div className="cat2">
-          <img src={data.product_images} alt="" />
+          <img src={data.product_image.secure_url} alt="" />
         </div>
         <div className="cat1">
           <p>{data.product_name}</p>
