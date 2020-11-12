@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+
 import Offers from "../components/Home/Offers";
 import photo from "../images/Vinted2.png";
 import axios from "axios";
@@ -44,9 +44,7 @@ const Home = () => {
         </div>
       </div>
 
-      <Link to={`/offer/${data._id}`}>
-        <Offers data={data} />
-      </Link>
+      <Offers data={data} />
     </div>
   );
 };

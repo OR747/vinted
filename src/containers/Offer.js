@@ -10,22 +10,23 @@ const Offer = () => {
 
   const { id } = useParams();
 
-  const fetchData = async () => {
-    try {
-      const response = await axios.get(
-        `https://lereacteur-vinted-api.herokuapp.com/offer/${id}`
-      );
-      console.log(response.data);
-      setData(response.data);
-      setIsLoading(false);
-    } catch (error) {
-      console.log(error.message);
-    }
-  };
   useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(
+          `https://lereacteur-vinted-api.herokuapp.com/offers/${id}`
+        );
+        console.log(response.data);
+        setData(response.data);
+        setIsLoading(false);
+      } catch (error) {
+        console.log(error.message);
+      }
+    };
+
     console.log("Rentre dans le useEffect");
     fetchData();
-  }, []);
+  }, [id]);
 
   return isLoading ? (
     <span>En cour de chargement...</span>
@@ -38,7 +39,7 @@ const Offer = () => {
         <div className="detail">
           <div className="detail1">
             <p>{data.product_price}</p>
-            <p>taille</p>
+            <p>{data.product_name}</p>
             <p>etat</p>
             <p>couleur</p>
             <p>emplacement</p>
