@@ -8,36 +8,32 @@ const Login = () => {
 
   const [email, setEmail] = useState("");
 
-  const [isLoading, setIsLoading] = useState(true);
-
   const handleSubmit = (event) => {
     event.preventDefault();
   };
 
-  const fetchData = async () => {
-    try {
-      const response = await axios.post(
-        "https://lereacteur-vinted-api.herokuapp.com/user/login"
-      );
-      //console.log(response.data);//
-      setData(response.data);
-      setIsLoading(false);
-    } catch (error) {
-      console.log(error.message);
-    }
-  };
-
   useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.post(
+          "https://lereacteur-vinted-api.herokuapp.com/user/login",
+          { email: email, password: password }
+        );
+        //console.log(response.data);//
+        setData(response.data);
+      } catch (error) {
+        console.log(error.message);
+      }
+    };
+
     console.log("Rentre dans le useEffect");
     fetchData();
   }, []);
 
-  return isLoading ? (
-    <span>En cour de chargement...</span>
-  ) : (
+  return (
     <div className="signup">
       <form onSubmit={handleSubmit}>
-        <h2>S'incrire</h2>
+        <h2>Se connecter</h2>
 
         <input
           type="email"

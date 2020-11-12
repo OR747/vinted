@@ -18,12 +18,13 @@ const Header = ({ recherche, setRecherche }) => {
       </div>
       <div className="button">
         <div className="button1">
-          <Link to="/signup">
-            <button>S'inscrire</button>
-          </Link>
-          <Link to="/login">
-            <button>Se connecter</button>
-          </Link>
+          <button>
+            <Link to="/signup">S'inscrire </Link>
+          </button>
+
+          <button>
+            <Link to="/login">Se connecter</Link>
+          </button>
         </div>
         <div className="button2">
           <button>Vends tes articles</button>

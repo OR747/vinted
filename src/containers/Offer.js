@@ -14,7 +14,7 @@ const Offer = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `https://lereacteur-vinted-api.herokuapp.com/offers/${id}`
+          `https://lereacteur-vinted-api.herokuapp.com/offer/${id}`
         );
         console.log(response.data);
         setData(response.data);
@@ -40,7 +40,7 @@ const Offer = () => {
           <div className="detail1">
             <p>{data.product_price}</p>
             <p>{data.product_name}</p>
-            <p>etat</p>
+
             <p>couleur</p>
             <p>emplacement</p>
           </div>

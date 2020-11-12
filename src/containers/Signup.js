@@ -7,20 +7,19 @@ const Signup = () => {
   const [password, setPassword] = useState("");
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
-  const [isLoading, setIsLoading] = useState(true);
+
   const handleSubmit = (event) => {
     event.preventDefault();
   };
-
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await axios.post(
-          "https://lereacteur-vinted-api.herokuapp.com/user/signup"
+          "https://lereacteur-vinted-api.herokuapp.com/user/signup",
+          { username: username, email: email, password: password }
         );
         console.log(response.data);
         setData(response.data);
-        setIsLoading(false);
       } catch (error) {
         console.log(error.message);
       }
@@ -30,15 +29,14 @@ const Signup = () => {
     fetchData();
   }, []);
 
-  return isLoading ? (
-    <span>En cour de chargement...</span>
-  ) : (
+  return (
     <div className="signup">
       <form onSubmit={handleSubmit}>
         <h2>S'incrire</h2>
         <input
           type="text"
           value={username}
+          placeholder="Nom d'utilisateur"
           onChange={(event) => {
             setUsername(event.target.value);
           }}
@@ -46,6 +44,7 @@ const Signup = () => {
         <input
           type="email"
           value={email}
+          placeholder="Email"
           onChange={(event) => {
             setEmail(event.target.value);
           }}
@@ -53,6 +52,7 @@ const Signup = () => {
         <input
           type="password"
           value={password}
+          placeholder="Mot de passe"
           onChange={(event) => {
             setPassword(event.target.value);
           }}
