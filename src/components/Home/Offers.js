@@ -4,8 +4,8 @@ import Categories from "../Home/Categories";
 const Offers = ({ data }) => {
   return (
     <div className="offre">
-      {data.map((categories, index) => {
-        return <Categories key={index} data={categories} />;
+      {data.offers.map((categorie, index) => {
+        return <Categories key={index} data={categorie} />;
       })}
     </div>
   );

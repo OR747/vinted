@@ -7,37 +7,78 @@
   padding-left: 90px;
   justify-content: space-around;
   display: flex;
+  margin-bottom: 30px;
 }
 .header img {
-  height: 45px;
-  width: 150px;
-
+  height: 31px;
+  width: 89px;
+  margin-left: -265px;
   border: red solid 2px;
+  margin-top: 13px;
 }
 .input {
   border: solid red 2px;
+  margin-left: -450px;
+  margin-top: 5px;
 }
 .button {
   border: red solid 2px;
   display: flex;
   justify-content: space-between;
+  margin-left: -68px;
 }
+
+/*HOME*/
+
 .contenaire1 {
   border: black solid 2px;
-  height: 480px;
+  height: 1000px;
   width: 1440px;
+
+  position: relative;
 }
 .bloc2 {
   height: 258px;
   width: 400px;
   border: springgreen solid 2px;
+  position: absolute;
+  top: 40%;
+  left: 99px;
+  transform: translateY(-50%);
+  background-color: #fff;
 }
 .bloc3 {
   height: 160px;
   width: 100%;
   border: tomato solid 2px;
 }
-img {
-  height: 700px;
+h1 {
+  font-size: 34px;
+  line-height: 42.5px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+.image img {
+  height: 100%;
   width: 1440px;
+}
+
+/*Offer*/
+
+.container2 {
+  border: black solid 2px;
+  display: flex;
+  height: 1000px;
+  width: 1440px;
+}
+
+.photo {
+  border: tomato solid 2px;
+  height: 1000px;
+  width: 720px;
+}
+.detail {
+  width: 720px;
+  height: 1000px;
+  border: steelblue solid 2px;
 }
