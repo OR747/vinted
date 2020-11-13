@@ -2,10 +2,13 @@ import React from "react";
 import logo from "../images/Vinted_logo.png";
 import { Link } from "react-router-dom";
 
-const Header = ({ recherche, setRecherche }) => {
+const Header = ({ recherche, setRecherche, setUser, token }) => {
   return (
     <div className="header">
-      <img src={logo} alt="" />
+      <Link to="/">
+        <img src={logo} alt="" />
+      </Link>
+
       <div className="input">
         <input
           type="text"
@@ -17,16 +20,28 @@ const Header = ({ recherche, setRecherche }) => {
         />
       </div>
       <div className="button">
-        <div className="button1">
-          <button>
-            <Link to="/signup">S'inscrire </Link>
-          </button>
+        {token ? (
+          <div className="button1">
+            <button
+              onClick={() => {
+                setUser(null);
+              }}
+            >
+              Se déconnecter
+            </button>
+          </div>
+        ) : (
+          <div className="button2">
+            <button>
+              <Link to="/signup">S'inscrire </Link>
+            </button>
 
-          <button>
-            <Link to="/login">Se connecter</Link>
-          </button>
-        </div>
-        <div className="button2">
+            <button>
+              <Link to="/login">Se connecter</Link>
+            </button>
+          </div>
+        )}
+        <div className="button3">
           <button>Vends tes articles</button>
         </div>
       </div>

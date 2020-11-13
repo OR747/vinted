@@ -1,33 +1,36 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import axios from "axios";
+import { useHistory } from "react-router-dom";
 
-const Signup = () => {
+const Signup = ({ setUser, alert }) => {
   /*const [recherche, setRecherche] = useState();*/
-  const [data, setData] = useState([]);
+
   const [password, setPassword] = useState("");
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-  };
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.post(
-          "https://lereacteur-vinted-api.herokuapp.com/user/signup",
-          { username: username, email: email, password: password }
-        );
-        console.log(response.data);
-        setData(response.data);
-      } catch (error) {
-        console.log(error.message);
-      }
-    };
+  const history = useHistory();
 
-    console.log("Rentre dans le useEffect");
-    fetchData();
-  }, []);
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    try {
+      const response = await axios.post(
+        "https://lereacteur-vinted-api.herokuapp.com/user/signup",
+        { username: username, email: email, password: password }
+      );
+      console.log(response.data);
+      if (response.data.token) {
+        setUser(response.data.token);
+        // Naviguer vers "/" Home
+        history.push("/");
+      } else {
+        alert("Une erreur est survenue");
+      }
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
 
   return (
     <div className="signup">
@@ -57,7 +60,7 @@ const Signup = () => {
             setPassword(event.target.value);
           }}
         />
-        <button>S'inscire</button>
+        <input type="submit" value="S'incrire" />
       </form>
     </div>
   );

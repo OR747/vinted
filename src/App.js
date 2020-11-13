@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
@@ -7,19 +7,33 @@ import Home from "./containers/Home";
 import Header from "./components/Header";
 import Signup from "./containers/Signup";
 import Login from "./containers/Login";
+import Cookie from "js-cookie";
 function App() {
+  const [token, setToken] = useState(Cookie.get("useToken") || null);
+
+  const setUser = (tokenToSet) => {
+    if (tokenToSet) {
+      Cookie.set("useToken", tokenToSet);
+
+      setToken(tokenToSet);
+    } else {
+      Cookie.remove("useToken");
+      setToken(null);
+    }
+  };
+
   return (
     <Router>
-      <Header />
+      <Header token={token} setUser={setUser} />
       <Switch>
         <Route path="/offer/:id">
           <Offer />
         </Route>
         <Route path="/signup">
-          <Signup />
+          <Signup setUser={setUser} />
         </Route>
         <Route path="/login">
-          <Login />
+          <Login setUser={setUser} />
         </Route>
         <Route path="/">
           <Home />

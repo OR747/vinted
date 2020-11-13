@@ -1,34 +1,32 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import axios from "axios";
-
-const Login = () => {
-  const [data, setData] = useState([]);
-
+import { useHistory } from "react-router-dom";
+const Login = ({ setUser, alerte }) => {
   const [password, setPassword] = useState("");
 
   const [email, setEmail] = useState("");
+  const history = useHistory();
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-  };
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.post(
-          "https://lereacteur-vinted-api.herokuapp.com/user/login",
-          { email: email, password: password }
-        );
-        //console.log(response.data);//
-        setData(response.data);
-      } catch (error) {
-        console.log(error.message);
+    try {
+      const response = await axios.post(
+        "https://lereacteur-vinted-api.herokuapp.com/user/login",
+        { email: email, password: password }
+      );
+      //console.log(response.data);//
+
+      if (response.data.token) {
+        setUser(response.data.token);
+        history.push("/");
+      } else {
+        alerte("Une erreure est survenue");
       }
-    };
-
-    console.log("Rentre dans le useEffect");
-    fetchData();
-  }, []);
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
 
   return (
     <div className="signup">
@@ -51,7 +49,7 @@ const Login = () => {
             setPassword(event.target.value);
           }}
         />
-        <button>Se connecter</button>
+        <button type="submit">Se connecter</button>
       </form>
     </div>
   );

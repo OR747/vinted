@@ -62,7 +62,33 @@ h1 {
   height: 100%;
   width: 1440px;
 }
-
+.bloc5 {
+  display: flex;
+  height: 1160px;
+  width: 100%;
+  border: blue solid 2px;
+}
+.offre {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-left: 93px;
+  margin-top: 62px;
+  margin-right: 93px;
+}
+.categories {
+  border: blueviolet solid 2px;
+  margin-bottom: 25px;
+}
+.cat2 img {
+  border: black solid 2px;
+  width: 235px;
+  height: 330px;
+}
+.cat1 {
+  border: black solid 2px;
+  width: 235px;
+}
 /*Offer*/
 
 .container2 {

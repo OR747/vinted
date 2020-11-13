@@ -13,11 +13,10 @@ const Categories = ({ data }) => {
         <div className="cat1">
           <p>{data.product_name}</p>
           <p>{data.product_price}</p>
-          <p>{data._id}</p>
         </div>
         <div className="cat3">
           {data.product_details.map((item, index) => {
-            return <Items data={item} key={item.id} />;
+            return <Items data={item} key={index} />;
           })}
         </div>
       </div>
