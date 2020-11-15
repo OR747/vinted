@@ -11,7 +11,7 @@ const Categories = ({ data }) => {
           <img src={data.product_image.secure_url} alt="" />
         </div>
         <div className="cat1">
-          <p>{data.product_price}</p>
+          <p>{data.product_price}€</p>
         </div>
         <div className="cat3">
           {data.product_details.map((item, index) => {

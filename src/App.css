@@ -27,18 +27,33 @@
   justify-content: space-between;
   margin-left: -68px;
 }
+.header .button1 {
+  margin-top: 13px;
+  margin-left: 49px;
+}
+.button1 button {
+  background-color: #29b6be;
+  flex-wrap: wrap;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  height: 27px;
+  width: 130px;
+}
+
 .button2 {
   display: flex;
   border: red 2px solid;
   justify-content: space-between;
   width: 280px;
   text-decoration: none;
+  margin-top: 13px;
 }
 
 .button2 button {
-  background-color: #29b6be;
+  background-color: white;
   flex-wrap: wrap;
-  border: none;
+  border-color: #29b6be;
   border-radius: 5px;
 
   height: 27px;
@@ -47,7 +62,8 @@
 
 .button2 a {
   text-decoration: none;
-  color: #fff;
+  color: #29b6be;
+  border: #29b6be;
 }
 
 .button3 button {
@@ -127,24 +143,128 @@ h1 {
   border: black solid 2px;
   width: 235px;
 }
+.cat1 p {
+  color: black;
+  font-size: 14px;
+}
+.cat3 p {
+  font-size: 12px;
+  color: #9d9d9d;
+}
+
 /*Offer*/
 
 .container2 {
   border: black solid 2px;
   display: flex;
   height: 1000px;
-  width: 1440px;
+  width: 100%;
+  background-color: #eaedee;
 }
 
 .photo {
   border: tomato solid 2px;
   height: 1000px;
-  width: 720px;
+  width: 850px;
+}
+.photo1 img {
+  width: 500px;
+  height: 750px;
+  border: blue solid 2px;
+  margin-left: 105px;
+  margin-top: 50px;
 }
 .detail {
   width: 720px;
   height: 1000px;
   border: steelblue solid 2px;
+  line-height: 19.5px;
+}
+.detail .detail1 {
+  width: 500px;
+  height: 750px;
+  border: blue solid 2px;
+  margin-left: 105px;
+  margin-top: 50px;
+  background-color: white;
+}
+.detail .price {
+  width: 100%;
+  border: black solid 2px;
+  margin-left: 55px;
+  font-size: 24px;
+  font-weight: bold;
+}
+.detail .detail3 {
+  width: 75%;
+  border: black solid 2px;
+  display: flex;
+  height: 35%;
+  margin-top: 20px;
+  margin-left: 55px;
+  border-bottom-color: gray;
+}
+
+.detail .detail31 {
+  width: 50%;
+  border: black solid 2px;
+}
+.detail31 p {
+  color: gray;
+}
+
+.detail .detail32 {
+  width: 80%;
+  border: black solid 2px;
+}
+
+.detail .name {
+  width: 75%;
+  border: solid black 2px;
+  margin-top: 30px;
+  font-weight: bold;
+  margin-left: 55px;
+}
+
+.detail .description {
+  width: 75%;
+  border: solid black 2px;
+  margin-top: 30px;
+  color: gray;
+  font-size: 16px;
+  margin-left: 55px;
+  line-height: 19.5px;
+}
+
+.detail .owner {
+  width: 75%;
+  border: black solid 2px;
+  margin-top: 30px;
+  margin-left: 55px;
+  display: flex;
+}
+.avatar {
+  width: 20%;
+  border: black solid;
+}
+.username {
+  margin-top: 15px;
+}
+.owner img {
+  height: 50px;
+  border-radius: 30px;
+}
+
+.detail .acheter {
+  width: 75%;
+  border: solid 2px black;
+  margin-top: 80px;
+  margin-left: 55px;
+  height: 50px;
+  background-color: #29b6be;
+  color: #fff;
+  font-size: 18px;
+  border-radius: 5px;
 }
 
 /*Signup*/
@@ -199,16 +319,4 @@ button[type="submit"] {
   margin-left: 71px;
 }
 
-/*Button*/
-
-header .button {
-  display: flex;
-}
-.button2 {
-  margin-top: 13px;
-  display: -webkit-ibox;
-}
-.button21[type="submit"] {
-  margin-left: 14px;
-  background-color: #04aeb6;
-}
+/*Offer*/
