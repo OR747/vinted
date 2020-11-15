@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
+import conditions from "../images/conditions.png";
 const Login = ({ setUser, alerte }) => {
   const [password, setPassword] = useState("");
 
@@ -32,7 +33,6 @@ const Login = ({ setUser, alerte }) => {
     <div className="signup">
       <form onSubmit={handleSubmit}>
         <h2>Se connecter</h2>
-
         <input
           type="email"
           value={email}
@@ -48,7 +48,10 @@ const Login = ({ setUser, alerte }) => {
           onChange={(event) => {
             setPassword(event.target.value);
           }}
-        />
+        />{" "}
+        <div>
+          <img src={conditions} alt="" />
+        </div>
         <button type="submit">Se connecter</button>
       </form>
     </div>
