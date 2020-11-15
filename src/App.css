@@ -31,16 +31,23 @@
   display: flex;
   border: red 2px solid;
   justify-content: space-between;
-  width: 200px;
+  width: 280px;
+  text-decoration: none;
 }
+
 .button2 button {
   background-color: #29b6be;
   flex-wrap: wrap;
   border: none;
   border-radius: 5px;
-  color: #fff;
+
   height: 27px;
   width: 130px;
+}
+
+.button2 a {
+  text-decoration: none;
+  color: #fff;
 }
 
 .button3 button {
@@ -55,7 +62,7 @@
 .header .button3 {
   margin-top: 13px;
   margin-left: 49px;
-  color: blue;
+  color: white;
   margin-right: -180px;
 }
 

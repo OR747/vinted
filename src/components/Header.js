@@ -52,11 +52,10 @@ const Header = ({ setUser, token }) => {
             <button>
               <Link to="/signup">S'inscrire </Link>
             </button>
-            <div className="buton21">
-              <button>
-                <Link to="/login">Se connecter</Link>
-              </button>
-            </div>
+
+            <button>
+              <Link to="/login">Se connecter</Link>
+            </button>
           </div>
         )}
         <span className="button3">
