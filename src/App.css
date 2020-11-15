@@ -182,7 +182,7 @@ h1 {
 }
 .detail .detail1 {
   width: 500px;
-  height: 750px;
+  height: 850px;
   border: blue solid 2px;
   margin-left: 105px;
   margin-top: 50px;
@@ -199,7 +199,7 @@ h1 {
   width: 75%;
   border: black solid 2px;
   display: flex;
-  height: 35%;
+  height: 25%;
   margin-top: 20px;
   margin-left: 55px;
   border-bottom-color: gray;
