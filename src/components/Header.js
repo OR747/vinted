@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 
 const Header = ({ setUser, token }) => {
-  const [username, setUsername] = useState("");
+  const [search, setSearch] = useState("");
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -28,12 +28,15 @@ const Header = ({ setUser, token }) => {
         <form onSubmit={handleSubmit}>
           <input
             type="text"
-            value={username}
+            value={search}
             placeholder="Recherche des articles"
             onChange={(event) => {
-              setUsername(event.target.value);
+              setSearch(event.target.value);
             }}
           />
+          <div>
+            <i class="fas fa-search"></i>
+          </div>
         </form>
       </div>
       <div className="button">

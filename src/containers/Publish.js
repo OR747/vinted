@@ -72,7 +72,7 @@ const Publish = ({ token }) => {
               }}
             />
           </div>
-          <div className="descrition">
+          <div className="description">
             <h4>Description</h4>
             <textarea
               name="desription"
@@ -159,24 +159,24 @@ const Publish = ({ token }) => {
                 />
               </div>
             </div>
-            <div>
-              <div className="text-input">
-                <h4>Prix</h4>
-                <input
-                  type="number"
-                  value={price}
-                  id="price"
-                  placeholder="Prix"
-                  onChange={(event) => {
-                    setPrice(event.target.value);
-                  }}
-                />
-              </div>
-            </div>
+            <div></div>
           </div>
         </div>
-
-        <button type="submit">Ajouter</button>
+        <div className="text-price">
+          <h4>Prix</h4>
+          <input
+            type="number"
+            value={price}
+            id="price"
+            placeholder="Prix"
+            onChange={(event) => {
+              setPrice(event.target.value);
+            }}
+          />
+        </div>
+        <div className="achete">
+          <button type="submit">Ajouter</button>
+        </div>
       </div>
     </form>
   ) : (

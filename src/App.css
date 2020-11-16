@@ -8,6 +8,7 @@
   justify-content: space-around;
   display: flex;
   margin-bottom: 30px;
+  margin-left: 40px;
 }
 .header img {
   height: 31px;
@@ -25,7 +26,7 @@
   border: red solid 2px;
   display: flex;
   justify-content: space-between;
-  margin-left: -68px;
+  margin-left: -280px;
 }
 .header .button1 {
   margin-top: 13px;
@@ -188,6 +189,7 @@ h1 {
   border: blue solid 2px;
   margin-left: 105px;
   margin-top: 50px;
+  object-fit: cover;
 }
 .detail {
   width: 720px;
@@ -338,12 +340,13 @@ button[type="submit"] {
 
 .publish {
   margin-top: 50px;
+  background-color: #eaedee;
 }
 .picture {
   width: 1440px;
   height: 235px;
-  border: solid black 2px;
-
+  border: solid gray 2px;
+  background-color: #fff;
   margin-left: 71px;
 }
 .title {
@@ -356,15 +359,19 @@ button[type="submit"] {
 .titre {
   width: 100%;
   height: 73px;
-  border: solid black 2px;
+  /*border: solid black 2px;*/
   display: flex;
+  background-color: #fff;
+  border-bottom-color: grey;
+  border-bottom: solid;
 }
-.descrition {
+.description {
   display: flex;
+  background-color: #fff;
 }
 .detailprod {
   width: 1440px;
-  height: 450px;
+  height: 383px;
   border: solid black 2px;
   margin-top: 16px;
   margin-left: 71px;
@@ -373,5 +380,30 @@ button[type="submit"] {
   display: flex;
   width: 100%;
   height: 75px;
+  border-bottom-color: grey;
+  border-bottom: solid 2px;
+  background-color: #fff;
+}
+.text-price {
+  width: 1440px;
+  height: 128px;
   border: solid black 2px;
+  margin-top: 16px;
+  margin-left: 71px;
+  display: flex;
+  background-color: white;
+}
+h4 {
+  margin-left: 25px;
+  width: 700px;
+}
+input {
+  width: 734px;
+  border: none;
+}
+.achete {
+  margin-top: 40px;
+  margin-left: 1175px;
+  width: 77px;
+  height: 24px;
 }
