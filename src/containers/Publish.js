@@ -5,9 +5,9 @@ import { Redirect, useHistory } from "react-router-dom";
 const Publish = ({ token }) => {
   const [file, setFile] = useState();
   const [title, setTitle] = useState("");
-  const [description, setDescrition] = useState("");
-  const [brand, setBrand] = useState("");
-  const [size, setSize] = useState("");
+  const [description, setDescription] = useState("");
+  const [selectedBrand, setSelectedBrand] = useState("");
+  const [selectedSize, setSelectedSize] = useState("");
   const [color, setColor] = useState("");
   const [condition, setCondition] = useState("");
   const [city, setCity] = useState("");
@@ -16,9 +16,9 @@ const Publish = ({ token }) => {
   const formData = new FormData();
   formData.append("title", title);
   formData.append("picture", file);
-  formData.append("descrition", description);
-  formData.append("brand", brand);
-  formData.append("size", size);
+  formData.append("description", description);
+  formData.append("brand", selectedBrand);
+  formData.append("size", selectedSize);
   formData.append("color", color);
   formData.append("condition", condition);
   formData.append("city", city);
@@ -32,7 +32,7 @@ const Publish = ({ token }) => {
       const response = await axios.post(
         " https://lereacteur-vinted-api.herokuapp.com/offer/publish",
         formData,
-        { headers: { authorization: "Bearer" + token } }
+        { headers: { authorization: "Bearer " + token } }
       );
       console.log(response.data);
       if (response.data._id) {
@@ -47,126 +47,137 @@ const Publish = ({ token }) => {
 
   return token ? (
     <form onSubmit={handleSubmit}>
-      <h3>Vends ton article</h3>
-      <div className="picture">
-        <input
-          type="file"
-          onChange={(event) => {
-            setFile(event.target.files);
-          }}
-        />
-      </div>
-      <div className="title">
-        <div className="titre">
-          <h4>Titre</h4>
+      <div className="publish">
+        <h3>Vends ton article</h3>
+        <div className="picture">
           <input
-            type="text"
-            value={title}
-            placeholder="Titre"
+            type="file"
+            id="file"
             onChange={(event) => {
-              setTitle(event.target.value);
+              //console.log(event.target.files);//
+              setFile(event.target.files[0]);
             }}
           />
         </div>
-        <div className="descrition">
-          <h4>Description</h4>
-          <textarea
-            name="desription"
-            id="descrition"
-            cols="30"
-            rows="10"
-            placeholder="Décris ton article"
-            onChange={(event) => {
-              setDescrition(event.target.value);
-            }}
-          ></textarea>
-        </div>
-      </div>
-      <div>
-        <div className="detailprod">
-          <div className="text-input">
-            <h4>Marque</h4>
+        <div className="title">
+          <div className="titre">
+            <h4>Titre</h4>
             <input
               type="text"
-              value={brand}
-              placeholder="Marque"
+              id="title"
+              value={title}
+              placeholder="Titre"
               onChange={(event) => {
-                setBrand(event.target.value);
+                setTitle(event.target.value);
               }}
             />
           </div>
+          <div className="descrition">
+            <h4>Description</h4>
+            <textarea
+              name="desription"
+              id="descrition"
+              cols="30"
+              rows="10"
+              placeholder="Décris ton article"
+              onChange={(event) => {
+                setDescription(event.target.value);
+              }}
+            ></textarea>
+          </div>
+        </div>
+        <div>
+          <div className="detailprod">
+            <div className="text-input">
+              <h4>Marque</h4>
+              <input
+                type="text"
+                value={selectedBrand}
+                id="brand"
+                placeholder="Marque"
+                onChange={(event) => {
+                  setSelectedBrand(event.target.value);
+                }}
+              />
+            </div>
 
-          <div>
-            <div className="text-input">
-              <h4>Taille</h4>
-              <input
-                type="text"
-                value={size}
-                placeholder="Taille"
-                onChange={(event) => {
-                  setSize(event.target.value);
-                }}
-              />
+            <div>
+              <div className="text-input">
+                <h4>Taille</h4>
+                <input
+                  type="text"
+                  value={selectedSize}
+                  id="size"
+                  placeholder="Taille"
+                  onChange={(event) => {
+                    setSelectedSize(event.target.value);
+                  }}
+                />
+              </div>
             </div>
-          </div>
-          <div>
-            <div className="text-input">
-              <h4>Couleur</h4>
-              <input
-                type="text"
-                value={color}
-                placeholder="Couleur"
-                onChange={(event) => {
-                  setColor(event.target.value);
-                }}
-              />
+            <div>
+              <div className="text-input">
+                <h4>Couleur</h4>
+                <input
+                  type="text"
+                  value={color}
+                  id="color"
+                  placeholder="Couleur"
+                  onChange={(event) => {
+                    setColor(event.target.value);
+                  }}
+                />
+              </div>
             </div>
-          </div>
 
-          <div>
-            <div className="text-input">
-              <h4>État</h4>
-              <input
-                type="text"
-                value={condition}
-                placeholder="État"
-                onChange={(event) => {
-                  setCondition(event.target.value);
-                }}
-              />
+            <div>
+              <div className="text-input">
+                <h4>État</h4>
+                <input
+                  type="text"
+                  value={condition}
+                  id="condition"
+                  placeholder="État"
+                  onChange={(event) => {
+                    setCondition(event.target.value);
+                  }}
+                />
+              </div>
             </div>
-          </div>
 
-          <div>
-            <div className="text-input">
-              <h4>Ville</h4>
-              <input
-                type="text"
-                value={city}
-                placeholder="Lieu"
-                onChange={(event) => {
-                  setCity(event.target.value);
-                }}
-              />
+            <div>
+              <div className="text-input">
+                <h4>Ville</h4>
+                <input
+                  type="text"
+                  value={city}
+                  id="city"
+                  placeholder="Lieu"
+                  onChange={(event) => {
+                    setCity(event.target.value);
+                  }}
+                />
+              </div>
             </div>
-          </div>
-          <div>
-            <div className="text-input">
-              <h4>Prix</h4>
-              <input
-                type="number"
-                value={price}
-                placeholder="Prix"
-                onChange={(event) => {
-                  setPrice(event.target.value);
-                }}
-              />
+            <div>
+              <div className="text-input">
+                <h4>Prix</h4>
+                <input
+                  type="number"
+                  value={price}
+                  id="price"
+                  placeholder="Prix"
+                  onChange={(event) => {
+                    setPrice(event.target.value);
+                  }}
+                />
+              </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <button type="submit">Envoyer</button>
+        <button type="submit">Ajouter</button>
+      </div>
     </form>
   ) : (
     <Redirect to={{ pathname: "/login", state: "publish" }} />
