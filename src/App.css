@@ -32,12 +32,12 @@
   margin-left: 49px;
 }
 .button1 button {
-  background-color: #29b6be;
+  background-color: #c2185b;
   flex-wrap: wrap;
   border: none;
   border-radius: 5px;
   color: #fff;
-  height: 27px;
+  height: 28px;
   width: 130px;
 }
 
@@ -81,7 +81,11 @@
   color: white;
   margin-right: -180px;
 }
-
+.button3 a {
+  text-decoration: none;
+  color: white;
+  border: #29b6be;
+}
 /*HOME*/
 
 .contenaire1 {
@@ -330,4 +334,35 @@ button[type="submit"] {
   margin-left: 71px;
 }
 
-/*Offer*/
+/*Publish*/
+
+.picture {
+  width: 1440px;
+  height: 235px;
+  border: solid black 2px;
+}
+.title {
+  width: 1440px;
+  height: 235px;
+  border: solid black 2px;
+}
+.titre {
+  width: 100%;
+  height: 73px;
+  border: solid black 2px;
+  display: flex;
+}
+.descrition {
+  display: flex;
+}
+.detailprod {
+  width: 1440px;
+  height: 450px;
+  border: solid black 2px;
+}
+.text-input {
+  display: flex;
+  width: 100%;
+  height: 73px;
+  border: solid black 2px;
+}

@@ -35,8 +35,8 @@ const Publish = ({ token }) => {
         { headers: { authorization: "Bearer" + token } }
       );
       console.log(response.data);
-      if (response.data.token) {
-        history.push("/offer");
+      if (response.data._id) {
+        history.push(`/offer/${response.data._id}`);
       } else {
         alert("Une erreur est survenue");
       }
@@ -57,91 +57,119 @@ const Publish = ({ token }) => {
         />
       </div>
       <div className="title">
-        <input
-          type="text"
-          value={title}
-          placeholder="Titre"
-          onChange={(event) => {
-            setTitle(event.target.value);
-          }}
-        />
+        <div className="titre">
+          <h4>Titre</h4>
+          <input
+            type="text"
+            value={title}
+            placeholder="Titre"
+            onChange={(event) => {
+              setTitle(event.target.value);
+            }}
+          />
+        </div>
+        <div className="descrition">
+          <h4>Description</h4>
+          <textarea
+            name="desription"
+            id="descrition"
+            cols="30"
+            rows="10"
+            placeholder="Décris ton article"
+            onChange={(event) => {
+              setDescrition(event.target.value);
+            }}
+          ></textarea>
+        </div>
+      </div>
+      <div>
+        <div className="detailprod">
+          <div className="text-input">
+            <h4>Marque</h4>
+            <input
+              type="text"
+              value={brand}
+              placeholder="Marque"
+              onChange={(event) => {
+                setBrand(event.target.value);
+              }}
+            />
+          </div>
 
-        <textarea
-          name="desription"
-          id="descrition"
-          cols="30"
-          rows="10"
-          placeholder="Décris ton article"
-          onChange={(event) => {
-            setDescrition(event.target.value);
-          }}
-        ></textarea>
-      </div>
-      <div>
-        <input
-          type="text"
-          value={brand}
-          placeholder="Marque"
-          onChange={(event) => {
-            setBrand(event.target.value);
-          }}
-        />
-      </div>
-      <div>
-        <input
-          type="text"
-          value={size}
-          placeholder="Taille"
-          onChange={(event) => {
-            setSize(event.target.value);
-          }}
-        />
-      </div>
-      <div>
-        <input
-          type="text"
-          value={color}
-          placeholder="Couleur"
-          onChange={(event) => {
-            setColor(event.target.value);
-          }}
-        />
-      </div>
-      <div>
-        <input
-          type="text"
-          value={condition}
-          placeholder="État"
-          onChange={(event) => {
-            setCondition(event.target.value);
-          }}
-        />
-      </div>
-      <div>
-        <input
-          type="text"
-          value={city}
-          placeholder="Lieu"
-          onChange={(event) => {
-            setCity(event.target.value);
-          }}
-        />
-      </div>
-      <div>
-        <input
-          type="text"
-          value={price}
-          placeholder="Prix"
-          onChange={(event) => {
-            setPrice(event.target.value);
-          }}
-        />
+          <div>
+            <div className="text-input">
+              <h4>Taille</h4>
+              <input
+                type="text"
+                value={size}
+                placeholder="Taille"
+                onChange={(event) => {
+                  setSize(event.target.value);
+                }}
+              />
+            </div>
+          </div>
+          <div>
+            <div className="text-input">
+              <h4>Couleur</h4>
+              <input
+                type="text"
+                value={color}
+                placeholder="Couleur"
+                onChange={(event) => {
+                  setColor(event.target.value);
+                }}
+              />
+            </div>
+          </div>
+
+          <div>
+            <div className="text-input">
+              <h4>État</h4>
+              <input
+                type="text"
+                value={condition}
+                placeholder="État"
+                onChange={(event) => {
+                  setCondition(event.target.value);
+                }}
+              />
+            </div>
+          </div>
+
+          <div>
+            <div className="text-input">
+              <h4>Ville</h4>
+              <input
+                type="text"
+                value={city}
+                placeholder="Lieu"
+                onChange={(event) => {
+                  setCity(event.target.value);
+                }}
+              />
+            </div>
+          </div>
+          <div>
+            <div className="text-input">
+              <h4>Prix</h4>
+              <input
+                type="number"
+                value={price}
+                placeholder="Prix"
+                onChange={(event) => {
+                  setPrice(event.target.value);
+                }}
+              />
+            </div>
+          </div>
+        </div>
       </div>
 
       <button type="submit">Envoyer</button>
     </form>
   ) : (
-    <Redirect to={{ pathname: "/loggin", state: "publish" }} />
+    <Redirect to={{ pathname: "/login", state: "publish" }} />
   );
 };
 export default Publish;
