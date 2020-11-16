@@ -59,7 +59,9 @@ const Header = ({ setUser, token }) => {
           </div>
         )}
         <span className="button3">
-          <button>Vends tes articles</button>
+          <button>
+            <Link to="/publish">Vends tes articles</Link>
+          </button>
         </span>
       </div>
     </div>
