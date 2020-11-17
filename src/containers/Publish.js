@@ -180,7 +180,7 @@ const Publish = ({ token }) => {
       </div>
     </form>
   ) : (
-    <Redirect to={{ pathname: "/login", state: "publish" }} />
+    <Redirect to={{ pathname: "/login", state: { fromPublish: true } }} />
   );
 };
 export default Publish;

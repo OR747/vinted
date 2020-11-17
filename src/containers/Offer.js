@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 const Offer = () => {
   /*const [recherche, setRecherche] = useState();*/
@@ -75,7 +75,9 @@ const Offer = () => {
               </div>
               <div className="username">{data.owner.account.username}</div>
             </div>
-            <button className="acheter"> Acheter</button>
+            <button className="acheter">
+              <Link to="/payment">Acheter</Link>
+            </button>
           </div>
         </div>
       </div>

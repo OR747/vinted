@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { useHistory } from "react-router-dom";
+import { useHistory, useLocation } from "react-router-dom";
 import conditions from "../images/conditions.png";
-const Login = ({ setUser, alerte }) => {
+const Login = ({ setUser }) => {
   const [password, setPassword] = useState("");
 
   const [email, setEmail] = useState("");
   const history = useHistory();
+  const location = useLocation();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -20,9 +21,9 @@ const Login = ({ setUser, alerte }) => {
 
       if (response.data.token) {
         setUser(response.data.token);
-        history.push("/");
+        history.push(location.state.fromPublish ? "/publish" : "/");
       } else {
-        alerte("Une erreure est survenue");
+        alert("Une erreure est survenue");
       }
     } catch (error) {
       console.log(error.message);

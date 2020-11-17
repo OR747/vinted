@@ -9,6 +9,7 @@ import Signup from "./containers/Signup";
 import Login from "./containers/Login";
 import Cookie from "js-cookie";
 import Publish from "./containers/Publish";
+import Paiement from "./containers/Paiement";
 function App() {
   const [token, setToken] = useState(Cookie.get("useToken") || null);
 
@@ -39,6 +40,10 @@ function App() {
         <Route path="/publish">
           <Publish token={token} />
         </Route>
+        <Route path="/payment">
+          <Paiement />
+        </Route>
+
         <Route path="/">
           <Home />
         </Route>
