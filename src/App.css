@@ -343,7 +343,7 @@ button[type="submit"] {
 /*Publish*/
 
 .publish {
-  margin-top: 50px;
+  margin-top: 30px;
   background-color: #eaedee;
 }
 h3 {
@@ -394,7 +394,7 @@ h3 {
 }
 .text-price {
   width: 1440px;
-  height: 128px;
+  height: 118px;
   border: solid black 2px;
   margin-top: 16px;
   margin-left: 71px;
@@ -411,11 +411,12 @@ input {
   font-size: 16px;
 }
 .achete {
-  margin-top: 40px;
-  margin-left: 1175px;
+  margin-top: 5px;
+  margin-left: 1170px;
   width: 77px;
   height: 24px;
 }
+
 .description textarea {
   width: 710px;
   border: none;
