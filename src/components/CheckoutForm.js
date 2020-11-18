@@ -2,10 +2,12 @@ import React, { useState } from "react";
 import { useStripe, useElements, CardElement } from "@stripe/react-stripe-js";
 import axios from "axios";
 
-const CheckoutForm = () => {
-  const [buy, setBuy] = useState(false);
+const CheckoutForm = ({ productName, totalPrice }) => {
+  const [isPaid, setIsPaid] = useState(false);
   const stripe = useStripe();
   const elements = useElements();
+
+  console.log(totalPrice);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -17,36 +19,33 @@ const CheckoutForm = () => {
         name: "l'id de l'acheteur",
       });
 
+      console.log(stripeResponse);
+
       const stripeToken = stripeResponse.token.id;
 
       const response = await axios.post(
-        "https://lereacteur-vinted-api.herokuapp.com/payment",
+        " https://lereacteur-vinted-api.herokuapp.com/payment",
         {
-          stripeToken: stripeToken,
-          title: "name",
-          amount: 1000,
+          stripeToken,
         }
       );
+      console.log(response.data);
 
       if (response.data.status === "succeeded") {
-        setBuy(true);
+        setIsPaid(true);
       }
     } catch (error) {
       console.log(error.message);
     }
   };
 
-  return (
-    <div>
-      {buy ? (
-        <p>Paiment OK !</p>
-      ) : (
-        <form onSubmit={handleSubmit}>
-          <CardElement />
-          <button type="submit">Pay</button>
-        </form>
-      )}
-    </div>
+  return isPaid ? (
+    <p>Paiment effectué !</p>
+  ) : (
+    <form onSubmit={handleSubmit}>
+      <CardElement />
+      <button type="submit">Pay</button>
+    </form>
   );
 };
 

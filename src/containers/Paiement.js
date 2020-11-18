@@ -9,29 +9,51 @@ const stripePromise = loadStripe(
 
 const Paiement = () => {
   const location = useLocation();
-  const { price } = location.state;
-
-  <Elements stripe={stripePromise}>
-    <h5>Résumé de la commande</h5>
-    <div className="commande">
-      <ul>
-        <li>Commande</li>
-        <span>{price}€</span>
-        <li>Frais de protection de l'acheteur</li>
-        <span>€</span>
-        <li>Frais de port</li>
-        <span>€</span>
-      </ul>
+  const {
+    price,
+    totalPrice,
+    protectionFees,
+    shippingFees,
+    productName,
+  } = location.state;
+  return (
+    <div className="Ticket">
+      <div className="ticket">
+        <h5>Résumé de la commande</h5>
+        <div className="commande">
+          <div className="commande1">
+            <div>Commande</div>
+            <span>{price}€</span>
+          </div>
+          <div className="commande2">
+            <div>Frais de protection de l'acheteur</div>
+            <span>{protectionFees}€</span>
+          </div>
+          <div className="commande3">
+            <div> Frais de port</div>
+            <span>{shippingFees}€</span>{" "}
+          </div>
+        </div>
+        <div className="total">
+          <div>Total</div>
+          <span>{totalPrice.toFixed(2)}€</span>{" "}
+        </div>
+        <div className="message">
+          <p>
+            Il ne vous plus qu'une etape pour vous offrir{" "}
+            <span>{productName}</span> vous allez payer{" "}
+            <span>{totalPrice}</span>€ (frais de protection et frais de port
+            inclus){" "}
+          </p>
+        </div>
+        <div className="carte">
+          <Elements stripe={stripePromise}>
+            <CheckoutForm productName={productName} totalPrice={totalPrice} />
+          </Elements>
+        </div>
+      </div>
     </div>
-    <div className="total">Total</div>
-    <div className="message">
-      <p>
-        Il ne vous plus qu'une etape pour vous offrir "nom du produit" vous
-        allez payer "" (frais de protection et frais de port inclus){" "}
-      </p>
-    </div>
-    <CheckoutForm />
-  </Elements>;
+  );
 };
 
 export default Paiement;

@@ -10,6 +10,10 @@ const Offer = () => {
 
   const { id } = useParams();
   const history = useHistory();
+  const price = data.product_price;
+  const protectionFees = (price / 10).toFixed(2);
+  const shippingFees = (protectionFees * 2).toFixed(2);
+  const total = Number(price) + Number(protectionFees) + Number(shippingFees);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -77,10 +81,18 @@ const Offer = () => {
               <div className="username">{data.owner.account.username}</div>
             </div>
             <button
-              className="acheter"
-              onClick={
-                (() => history.push("/payment"), { price: data.product_price })
-              }
+              onClick={() => {
+                history.push({
+                  pathname: "/payment",
+                  state: {
+                    productName: data.product_name,
+                    totalPrice: total,
+                    protectionFees: protectionFees,
+                    shippingFees: shippingFees,
+                    price: data.product_price,
+                  },
+                });
+              }}
             >
               Acheter
             </button>
