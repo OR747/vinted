@@ -42,8 +42,8 @@ const Paiement = () => {
           <p>
             Il ne vous plus qu'une étape pour vous offrir{" "}
             <span>{productName}</span> vous allez payer{" "}
-            <span>{totalPrice}</span>€ (frais de protection et frais de port
-            inclus){" "}
+            <span>{totalPrice.toFixed(2)}</span>€ (frais de protection et frais
+            de port inclus){" "}
           </p>
         </div>
         <div className="carte">

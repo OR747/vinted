@@ -428,7 +428,7 @@ input {
   margin-top: 30px;
 }
 h5 {
-  font-size: 14px;
+  font-size: 18px;
   color: #c2c2c2;
 }
 .commande {
@@ -468,5 +468,9 @@ h5 {
 }
 
 .carte {
-  align-items: center;
+  margin-top: 30px;
+}
+.carte button {
+  margin-top: 30px;
+  margin-left: 170px;
 }
