@@ -1,7 +1,7 @@
 .header {
   width: 1440px;
   height: 59px;
-  border: red solid 2px;
+  /*border: red solid 2px;*/
   font-size: 18px;
   background-color: #ffffff;
   padding-left: 90px;
@@ -14,16 +14,16 @@
   height: 31px;
   width: 89px;
   margin-left: -265px;
-  border: red solid 2px;
+  /*border: red solid 2px;*/
   margin-top: 13px;
 }
 .input1 {
-  border: solid red 2px;
+  /*border: solid red 2px;*/
   margin-left: -450px;
   margin-top: 5px;
 }
 .button {
-  border: red solid 2px;
+  /*border: red solid 2px;*/
   display: flex;
   justify-content: space-between;
   margin-left: -280px;
@@ -33,7 +33,7 @@
   margin-left: 49px;
 }
 .button1 button {
-  background-color: #c2185b;
+  /*background-color: #c2185b;*/
   flex-wrap: wrap;
   border: none;
   border-radius: 5px;
@@ -44,7 +44,7 @@
 
 .button2 {
   display: flex;
-  border: red 2px solid;
+  /*border: red 2px solid;*/
   justify-content: space-between;
   width: 280px;
   text-decoration: none;
@@ -90,7 +90,7 @@
 /*HOME*/
 
 .contenaire1 {
-  border: black solid 2px;
+  /*border: black solid 2px;*/
   height: 1000px;
   width: 1440px;
 
@@ -99,9 +99,9 @@
 .bloc2 {
   height: 258px;
   width: 400px;
-  border: springgreen solid 2px;
+  /*border: springgreen solid 2px;*/
   position: absolute;
-  top: 55%;
+  top: 45%;
   left: 99px;
   transform: translateY(-50%);
   background-color: #fff;
@@ -109,7 +109,7 @@
 .bloc3 {
   height: 160px;
   width: 100%;
-  border: tomato solid 2px;
+  /* border: tomato solid 2px;*/
 }
 h1 {
   font-size: 34px;
@@ -136,7 +136,7 @@ h1 {
   display: flex;
   height: 1160px;
   width: 100%;
-  border: blue solid 2px;
+  /*border: blue solid 2px;*/
 }
 .offre {
   display: flex;
@@ -147,16 +147,16 @@ h1 {
   margin-right: 93px;
 }
 .categories {
-  border: blueviolet solid 2px;
+  /*border: blueviolet solid 2px;*/
   margin-bottom: 25px;
 }
 .cat2 img {
-  border: black solid 2px;
+  /*border: black solid 2px;*/
   width: 235px;
   height: 330px;
 }
 .cat1 {
-  border: black solid 2px;
+  /* border: black solid 2px;*/
   width: 235px;
 }
 .cat1 p {
@@ -171,7 +171,7 @@ h1 {
 /*Offer*/
 
 .container2 {
-  border: black solid 2px;
+  /*border: black solid 2px;*/
   display: flex;
   height: 1000px;
   width: 100%;
@@ -179,14 +179,14 @@ h1 {
 }
 
 .photo {
-  border: tomato solid 2px;
+  /*border: tomato solid 2px;*/
   height: 1000px;
   width: 850px;
 }
 .photo1 img {
   width: 500px;
   height: 750px;
-  border: blue solid 2px;
+  /*border: blue solid 2px;*/
   margin-left: 105px;
   margin-top: 50px;
   object-fit: cover;
@@ -194,27 +194,30 @@ h1 {
 .detail {
   width: 720px;
   height: 1000px;
-  border: steelblue solid 2px;
+  /*border: steelblue solid 2px;*/
   line-height: 19.5px;
 }
 .detail .detail1 {
   width: 500px;
   height: 850px;
-  border: blue solid 2px;
+  /*border: blue solid 2px;*/
   margin-left: 105px;
   margin-top: 50px;
   background-color: white;
 }
 .detail .price {
   width: 100%;
-  border: black solid 2px;
+  /*border: black solid 2px;*/
   margin-left: 55px;
   font-size: 24px;
   font-weight: bold;
 }
+.price p {
+  margin-top: 50px;
+}
 .detail .detail3 {
   width: 75%;
-  border: black solid 2px;
+  /*border: black solid 2px;*/
   display: flex;
   height: 25%;
   margin-top: 20px;
@@ -224,7 +227,7 @@ h1 {
 
 .detail .detail31 {
   width: 50%;
-  border: black solid 2px;
+  /*border: black solid 2px;*/
 }
 .detail31 p {
   color: gray;
@@ -232,12 +235,12 @@ h1 {
 
 .detail .detail32 {
   width: 80%;
-  border: black solid 2px;
+  /*border: black solid 2px;*/
 }
 
 .detail .name {
   width: 75%;
-  border: solid black 2px;
+  /*border: solid black 2px;*/
   margin-top: 30px;
   font-weight: bold;
   margin-left: 55px;
@@ -245,7 +248,7 @@ h1 {
 
 .detail .description {
   width: 75%;
-  border: solid black 2px;
+  /* border: solid black 2px;*/
   margin-top: 30px;
   color: gray;
   font-size: 16px;
@@ -255,14 +258,14 @@ h1 {
 
 .detail .owner {
   width: 75%;
-  border: black solid 2px;
+  /*border: black solid 2px;*/
   margin-top: 30px;
   margin-left: 55px;
   display: flex;
 }
 .avatar {
   width: 20%;
-  border: black solid;
+  /*border: black solid;*/
 }
 .username {
   margin-top: 15px;
@@ -287,7 +290,7 @@ h1 {
 
 .signup {
   margin: 0 auto;
-  background-color: lightblue;
+  /*background-color: lightblue;*/
   height: 100vh; /* viewport height */
   width: 50vh;
   display: flex;
