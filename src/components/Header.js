@@ -1,22 +1,9 @@
 import React, { useState } from "react";
 import logo from "../images/Vinted_logo.png";
 import { Link } from "react-router-dom";
-import axios from "axios";
 
 const Header = ({ setUser, token }) => {
   const [search, setSearch] = useState("");
-
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-
-    try {
-      const response = await axios.get(
-        " https://lereacteur-vinted-api.herokuapp.com/offers"
-      );
-    } catch (error) {
-      console.log(error.message);
-    }
-  };
 
   return (
     <div className="header">
@@ -25,19 +12,17 @@ const Header = ({ setUser, token }) => {
       </Link>
 
       <div className="input1">
-        <form onSubmit={handleSubmit}>
-          <input
-            type="text"
-            value={search}
-            placeholder="Recherche des articles"
-            onChange={(event) => {
-              setSearch(event.target.value);
-            }}
-          />
-          <div>
-            <i class="fas fa-search"></i>
-          </div>
-        </form>
+        <input
+          type="text"
+          value={search}
+          placeholder="Recherche des articles"
+          onChange={(event) => {
+            setSearch(event.target.value);
+          }}
+        />
+        <div>
+          <i class="fas fa-search"></i>
+        </div>
       </div>
       <div className="button">
         {token ? (
