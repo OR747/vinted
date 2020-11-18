@@ -23,7 +23,7 @@ const Paiement = () => {
         <div className="commande">
           <div className="commande1">
             <div>Commande</div>
-            <span>{price}€</span>
+            <span>{price.toFixed(2)}€</span>
           </div>
           <div className="commande2">
             <div>Frais de protection de l'acheteur</div>
@@ -40,7 +40,7 @@ const Paiement = () => {
         </div>
         <div className="message">
           <p>
-            Il ne vous plus qu'une etape pour vous offrir{" "}
+            Il ne vous plus qu'une étape pour vous offrir{" "}
             <span>{productName}</span> vous allez payer{" "}
             <span>{totalPrice}</span>€ (frais de protection et frais de port
             inclus){" "}

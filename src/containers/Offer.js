@@ -10,6 +10,7 @@ const Offer = () => {
 
   const { id } = useParams();
   const history = useHistory();
+
   const price = data.product_price;
   const protectionFees = (price / 10).toFixed(2);
   const shippingFees = (protectionFees * 2).toFixed(2);
