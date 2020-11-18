@@ -66,7 +66,7 @@ const Publish = ({ token }) => {
               type="text"
               id="title"
               value={title}
-              placeholder="Titre"
+              placeholder="ex: Chemise Sézane verte"
               onChange={(event) => {
                 setTitle(event.target.value);
               }}
@@ -79,7 +79,7 @@ const Publish = ({ token }) => {
               id="descrition"
               cols="30"
               rows="10"
-              placeholder="Décris ton article"
+              placeholder="ex: porté quelquefois, taille correctement"
               onChange={(event) => {
                 setDescription(event.target.value);
               }}
@@ -94,7 +94,7 @@ const Publish = ({ token }) => {
                 type="text"
                 value={selectedBrand}
                 id="brand"
-                placeholder="Marque"
+                placeholder="ex: Zara"
                 onChange={(event) => {
                   setSelectedBrand(event.target.value);
                 }}
@@ -108,7 +108,7 @@ const Publish = ({ token }) => {
                   type="text"
                   value={selectedSize}
                   id="size"
-                  placeholder="Taille"
+                  placeholder="ex: L / 40 / 12"
                   onChange={(event) => {
                     setSelectedSize(event.target.value);
                   }}
@@ -122,7 +122,7 @@ const Publish = ({ token }) => {
                   type="text"
                   value={color}
                   id="color"
-                  placeholder="Couleur"
+                  placeholder="ex: Fushia"
                   onChange={(event) => {
                     setColor(event.target.value);
                   }}
@@ -137,7 +137,7 @@ const Publish = ({ token }) => {
                   type="text"
                   value={condition}
                   id="condition"
-                  placeholder="État"
+                  placeholder="ex:neuf avec étiquette"
                   onChange={(event) => {
                     setCondition(event.target.value);
                   }}
@@ -152,7 +152,7 @@ const Publish = ({ token }) => {
                   type="text"
                   value={city}
                   id="city"
-                  placeholder="Lieu"
+                  placeholder="ex: Paris"
                   onChange={(event) => {
                     setCity(event.target.value);
                   }}
@@ -168,7 +168,7 @@ const Publish = ({ token }) => {
             type="number"
             value={price}
             id="price"
-            placeholder="Prix"
+            placeholder="0,00 €"
             onChange={(event) => {
               setPrice(event.target.value);
             }}

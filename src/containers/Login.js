@@ -9,6 +9,14 @@ const Login = ({ setUser }) => {
   const history = useHistory();
   const location = useLocation();
 
+  //revenir à la page d'acceuil aprés le login
+  let fromPublish;
+  if (location.state) {
+    fromPublish = true;
+  } else {
+    fromPublish = false;
+  }
+
   const handleSubmit = async (event) => {
     event.preventDefault();
 
@@ -21,7 +29,7 @@ const Login = ({ setUser }) => {
 
       if (response.data.token) {
         setUser(response.data.token);
-        history.push(location.state.fromPublish ? "/publish" : "/");
+        history.push(fromPublish ? "/publish" : "/");
       } else {
         alert("Une erreure est survenue");
       }
