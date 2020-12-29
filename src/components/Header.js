@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import logo from "../images/Vinted_logo.png";
 import { Link } from "react-router-dom";
+import SearchBar from "../components/SearchBar";
 
-const Header = ({ setUser, token }) => {
-  const [search, setSearch] = useState("");
+const Header = ({ setUser, token, setFilter }) => {
+  // const [search, setSearch] = useState("");
 
   return (
     <div className="header">
@@ -12,14 +13,15 @@ const Header = ({ setUser, token }) => {
       </Link>
 
       <div className="input1">
-        <input
+        {/* <input
           type="text"
           value={search}
           placeholder="Recherche des articles"
           onChange={(event) => {
             setSearch(event.target.value);
           }}
-        />
+        /> */}
+        <SearchBar setFilter={setFilter} />
         <div>
           <i class="fas fa-search"></i>
         </div>

@@ -10,7 +10,24 @@ import Login from "./containers/Login";
 import Cookie from "js-cookie";
 import Publish from "./containers/Publish";
 import Paiement from "./containers/Paiement";
+
+// Fontawsome
+import { library } from "@fortawesome/fontawesome-svg-core";
+import {
+  faEye,
+  faEyeSlash,
+  faCaretDown,
+  faSearch,
+  faStar,
+  faChevronRight,
+} from "@fortawesome/free-solid-svg-icons";
+library.add(faEye, faEyeSlash, faCaretDown, faSearch, faStar, faChevronRight);
+
 function App() {
+  // State qui permet de filtrer la recherche
+
+  const [filter, setFilter] = useState("");
+
   const [token, setToken] = useState(Cookie.get("useToken") || null);
 
   const setUser = (tokenToSet) => {
@@ -26,7 +43,7 @@ function App() {
 
   return (
     <Router>
-      <Header token={token} setUser={setUser} />
+      <Header token={token} setUser={setUser} setFilter={setFilter} />
       <Switch>
         <Route path="/offer/:id">
           <Offer />
@@ -45,7 +62,7 @@ function App() {
         </Route>
 
         <Route path="/">
-          <Home />
+          <Home filter={filter} />
         </Route>
       </Switch>
     </Router>

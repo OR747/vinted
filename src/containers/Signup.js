@@ -2,10 +2,13 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
 import conditions from "../images/conditions.png";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 const Signup = ({ setUser, alert }) => {
   const [password, setPassword] = useState("");
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
+  const [eye, setEye] = useState(true);
 
   const history = useHistory();
 
@@ -50,14 +53,40 @@ const Signup = ({ setUser, alert }) => {
             setEmail(event.target.value);
           }}
         />
-        <input
-          type="password"
-          value={password}
-          placeholder="Mot de passe"
-          onChange={(event) => {
-            setPassword(event.target.value);
-          }}
-        />
+        <div className="inputWhitIcon2">
+          <input
+            type="password"
+            value={password}
+            id="input"
+            placeholder="Mot de passe"
+            onChange={(event) => {
+              setPassword(event.target.value);
+            }}
+          />
+          <div className="inputIcon">
+            {eye === true ? (
+              <FontAwesomeIcon
+                id="eye"
+                icon="eye"
+                onClick={() => {
+                  setEye(false);
+                  var x = document.getElementById("input");
+                  x.type = "text";
+                }}
+              />
+            ) : (
+              <FontAwesomeIcon
+                id="eye"
+                icon="eye-slash"
+                onClick={() => {
+                  setEye(true);
+                  var x = document.getElementById("input");
+                  x.type = "password";
+                }}
+              />
+            )}
+          </div>
+        </div>
         <div>
           <img src={conditions} alt="" />
         </div>

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams, useHistory } from "react-router-dom";
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 const Offer = () => {
   /*const [recherche, setRecherche] = useState();*/
   const [data, setData] = useState([]);
@@ -46,57 +46,57 @@ const Offer = () => {
         </div>
         <div className="detail">
           <div className="detail1">
-            <div className="price">
-              <p>{data.product_price}€</p>
-            </div>
-            <div className="detail3">
-              <div className="detail31">
-                <p>MARQUE</p>
-                <p>TAILLE</p>
-                <p>ÉTAT</p>
-                <p>COULEUR</p>
-                <p>EMPLACEMENT</p>
-              </div>
-              <div className="detail32">
-                {data.product_details.map((item, index) => {
-                  return (
-                    <div key={index}>
-                      <p>{item.TAILLE}</p>
-                      <p>{item.MARQUE}</p>
-                      <p>{item.ÉTAT}</p>
-                      <p>{item.COULEUR}</p>
-                      <p>{item.EMPLACEMENT}</p>
-                    </div>
-                  );
-                })}
-              </div>
-            </div>
-            <div className="name">{data.product_name}</div>
-            <div className="description">{data.product_description}</div>
-            <div className="owner">
-              <div className="avatar">
+            <div className="detail32">
+              <p style={{ fontSize: 24 }}>{data.product_price}€</p>
+              <hr />
+
+              {data.product_details.map((item, index) => {
+                const keys = Object.keys(item);
+                return (
+                  <div key={index} className="offer-description">
+                    <p>{keys[0]}</p>
+                    <p>{item[keys[0]]}</p>
+                  </div>
+                );
+              })}
+              <hr />
+              {/* <div className="name">{data.product_name}</div> */}
+              <p>{data.product_name}</p>
+              {/* <div numberOfLines={3}>{data.product_description}</div> */}
+              <p numberOfLines={3}>{data.product_description}</p>
+              <button
+                onClick={() => {
+                  history.push({
+                    pathname: "/payment",
+                    state: {
+                      productName: data.product_name,
+                      totalPrice: total,
+                      protectionFees: protectionFees,
+                      shippingFees: shippingFees,
+                      price: data.product_price,
+                    },
+                  });
+                }}
+              >
+                Acheter
+              </button>
+              <div className="owner">
                 {data.owner.account.avatar && (
                   <img src={data.owner.account.avatar.url} alt="" />
                 )}
+
+                <div className="username">
+                  {data.owner.account.username}
+                  <div className="rating">
+                    <FontAwesomeIcon icon="star" />
+                    <FontAwesomeIcon icon="star" />
+                    <FontAwesomeIcon icon="star" />
+                    <FontAwesomeIcon icon="star" />
+                    <FontAwesomeIcon icon="star" />
+                  </div>
+                </div>
               </div>
-              <div className="username">{data.owner.account.username}</div>
             </div>
-            <button
-              onClick={() => {
-                history.push({
-                  pathname: "/payment",
-                  state: {
-                    productName: data.product_name,
-                    totalPrice: total,
-                    protectionFees: protectionFees,
-                    shippingFees: shippingFees,
-                    price: data.product_price,
-                  },
-                });
-              }}
-            >
-              Acheter
-            </button>
           </div>
         </div>
       </div>

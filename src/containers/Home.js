@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 
 import Offers from "../components/Home/Offers";
 import photo from "../images/Vinted2.png";
+// import Tear from "../images/tear.svg";
+import { Link } from "react-router-dom";
 import axios from "axios";
 
 const Home = () => {
@@ -39,9 +41,14 @@ const Home = () => {
             <h1>Prêts à faire du tri dans vos placards ?</h1>
           </div>
           <div className="bloc4">
-            <button>Commencer à vendre</button>
+            <Link to="/publish">
+              <button>Commencer à vendre</button>
+            </Link>
           </div>
         </div>
+        {/* <div>
+          <img src={Tear} alt="" />
+        </div> */}
       </div>
       <div className="bloc5">
         <Offers data={data} />
