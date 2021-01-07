@@ -331,6 +331,14 @@ h1 {
   background-color: #fff;
   padding: 10px;
 }
+.cgv {
+  width: 75%;
+
+  border-radius: 10px;
+  background-color: #fff;
+  padding: 10px;
+  color: #666666;
+}
 .offer-description {
   display: flex;
   justify-content: space-between;
@@ -365,17 +373,21 @@ h1 {
   line-height: 19.5px;
 }
 
-.detail .owner {
-  width: 80%;
+.owner {
+  width: 79%;
+
+  border-radius: 10px;
+  background-color: #fff;
 
   /* border: black solid 2px; */
-  margin-top: 40px;
-  margin-left: 95px;
+  margin-top: 20px;
+  /* margin-left: 95px; */
   display: flex;
 }
 
 .username {
-  margin-top: 15px;
+  margin-top: 10px;
+  margin-left: 20px;
 }
 .owner img {
   height: 50px;
@@ -470,6 +482,31 @@ button[type="submit"] {
   justify-content: center;
   align-items: center;
   margin-left: -60px;
+}
+.newsletter {
+  width: 273px;
+  margin-left: 92px;
+}
+
+.chek {
+  display: flex;
+  align-items: center;
+  justify-items: center;
+}
+
+.cgu {
+  font-size: 12px;
+  line-height: 13.3px;
+  color: #999;
+  width: 97%;
+  margin-top: -10px;
+}
+.signup-text {
+  color: #04aeb6;
+  margin-top: 20px;
+  font-size: 14px;
+  cursor: pointer;
+  text-decoration: none;
 }
 
 /*Publish*/

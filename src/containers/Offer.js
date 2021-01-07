@@ -80,22 +80,35 @@ const Offer = () => {
               >
                 Acheter
               </button>
-              <div className="owner">
-                {data.owner.account.avatar && (
-                  <img src={data.owner.account.avatar.url} alt="" />
-                )}
+            </div>
+            <div className="owner">
+              {data.owner.account.avatar && (
+                <img src={data.owner.account.avatar.url} alt="" />
+              )}
 
-                <div className="username">
-                  {data.owner.account.username}
-                  <div className="rating">
-                    <FontAwesomeIcon icon="star" />
-                    <FontAwesomeIcon icon="star" />
-                    <FontAwesomeIcon icon="star" />
-                    <FontAwesomeIcon icon="star" />
-                    <FontAwesomeIcon icon="star" />
-                  </div>
+              <div className="username">
+                {data.owner.account.username}
+                <div className="rating">
+                  <FontAwesomeIcon icon="star" />
+                  <FontAwesomeIcon icon="star" />
+                  <FontAwesomeIcon icon="star" />
+                  <FontAwesomeIcon icon="star" />
+                  <FontAwesomeIcon icon="star" />
                 </div>
               </div>
+            </div>
+            <div>
+              <p className="cgv">
+                Le droit de rétractation (article L. 221-18 du code de la
+                consommation) et la garantie légale de conformité (article L.
+                217-4 et suivants du même code) ne sont pas applicables à votre
+                transaction. La garantie des vices cachés (article 1641 et
+                suivants du code civil) est toutefois applicable.Vous pouvez
+                également consulter les dispositions relatives au droit des
+                obligations et à la responsabilité civile. Dans tous les cas, si
+                vous payez via Vinted, votre achat est couvert par la Protection
+                Acheteurs.
+              </p>
             </div>
           </div>
         </div>

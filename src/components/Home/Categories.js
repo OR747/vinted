@@ -8,6 +8,13 @@ const Categories = ({ data }) => {
     <Link to={`/offer/${data._id}`}>
       <div className="categories">
         <div className="cat2">
+          <div className="owner">
+            {/* {data.owner.account.avatar && (
+              <img src={data.owner.account.avatar.url} alt="" />
+            )} */}
+
+            <div className="username">{data.owner.account.username}</div>
+          </div>
           <img src={data.product_image.secure_url} alt="" />
         </div>
         <div className="cat1">
