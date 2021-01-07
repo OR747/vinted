@@ -1,6 +1,6 @@
 .header {
-  width: 1440px;
-  height: 59px;
+  width: 1410px;
+  height: 80px;
   /* border: red solid 2px; */
   /* font-size: 18px; */
   background-color: #ffffff;
@@ -9,6 +9,8 @@
   display: flex;
   margin-bottom: 30px;
   margin-left: 40px;
+  align-items: center;
+  border-bottom: solid 0.1px #999;
 }
 .header img {
   height: 31px;
@@ -58,7 +60,8 @@
   border-radius: 5px;
 
   height: 27px;
-  width: 130px;
+  width: 165px;
+  display: flex;
 }
 
 .button2 a {
@@ -78,9 +81,9 @@
 }
 .header .button3 {
   margin-top: 13px;
-  margin-left: 49px;
+  margin-left: -105px;
   color: white;
-  margin-right: -180px;
+  margin-right: -168px;
 }
 .button3 a {
   text-decoration: none;
@@ -442,7 +445,7 @@ h1 {
   font-size: 18px;
 }
 h2 {
-  margin-left: 150px;
+  margin-left: 130px;
   font-size: 24px;
   line-height: 32px;
 }
@@ -508,7 +511,14 @@ button[type="submit"] {
   cursor: pointer;
   text-decoration: none;
 }
-
+.signup-text1 {
+  color: #04aeb6;
+  margin-top: 20px;
+  font-size: 14px;
+  cursor: pointer;
+  text-decoration: none;
+  margin-left: 65px;
+}
 /*Publish*/
 
 .publish {

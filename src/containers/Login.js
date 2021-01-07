@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useHistory, useLocation } from "react-router-dom";
-import conditions from "../images/conditions.png";
+import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Login = ({ setUser }) => {
@@ -86,11 +86,25 @@ const Login = ({ setUser }) => {
             )}
           </div>
         </div>
-        <div>
-          <img src={conditions} alt="" />
+        <div>{/* <img src={conditions} alt="" /> */}</div>
+        <div className="newsletter">
+          <div className="chek">
+            <input style={{ height: 20, marginLeft: -115 }} type="checkbox" />
+            <p style={{ width: 250, marginLeft: -105, color: "grey" }}>
+              S'inscrire à notre newsletter
+            </p>
+          </div>
+          <p className="cgu">
+            En m'inscrivant je confirme avoir lu et accepté les Termes &
+            Conditions et Politique de Confidentialité de Vinted. Je confirme
+            avoir au moins 18 ans.
+          </p>
         </div>
         <button type="submit">Se connecter</button>
       </form>
+      <Link className="signup-text1" to="/signup">
+        Tu n'as pas de compte ? Inscris-toi !
+      </Link>
     </div>
   );
 };

@@ -39,12 +39,12 @@ const Header = ({ setUser, token, setFilter }) => {
           </div>
         ) : (
           <div className="button2">
-            <button>
+            {/* <button>
               <Link to="/signup">S'inscrire </Link>
-            </button>
+            </button> */}
 
             <button>
-              <Link to="/login">Se connecter</Link>
+              <Link to="/login">S'inscrire | Se connecter</Link>
             </button>
           </div>
         )}
