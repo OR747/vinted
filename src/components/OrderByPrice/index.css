@@ -1,0 +1,27 @@
+.orderByPrice {
+  width: 90%;
+  display: flex;
+  max-width: 1400px;
+  margin-bottom: 20px;
+  /* justify-content: flex-end; */
+  margin-top: 30px;
+  margin-left: 90px;
+}
+
+.orderByPrice select {
+  border: none;
+  outline: none;
+  font-family: inherit;
+  font-size: 16px;
+  background-color: #04aeb6;
+  color: white;
+  border-radius: 5px;
+  height: 30px;
+  cursor: pointer;
+}
+
+@media (max-width: 720px) {
+  .orderByPrice {
+    margin-top: 50px;
+  }
+}

@@ -13,14 +13,6 @@ const Header = ({ setUser, token, setFilter }) => {
       </Link>
 
       <div className="input1">
-        {/* <input
-          type="text"
-          value={search}
-          placeholder="Recherche des articles"
-          onChange={(event) => {
-            setSearch(event.target.value);
-          }}
-        /> */}
         <SearchBar setFilter={setFilter} />
         <div>
           <i class="fas fa-search"></i>
