@@ -13,7 +13,7 @@ const Categories = ({ data }) => {
               <img src={data.owner.account.avatar.url} alt="" />
             )} */}
 
-            <div className="username">{data.owner.account.username}</div>
+            {/* <div className="username">{data.owner.account.username}</div> */}
           </div>
           <img src={data.product_image.secure_url} alt="" />
         </div>
